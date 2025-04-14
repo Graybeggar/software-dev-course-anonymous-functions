@@ -78,4 +78,40 @@ const todos = [
   // console.log("Sorted by Priority:", ...);
   // console.log("All Tasks Completed:", ...);
   // console.log("Sorted Incomplete Tasks:", ...);
-  
+
+const todos = [ // To-Do List Array
+    { task: "Wash the dishes", completed: false, priority: 3 },
+    { task: "Write a blog post", completed: true, priority: 1 },
+    { task: "Buy groceries", completed: false, priority: 2 },
+    { task: "Study JavaScript", completed: true, priority: 1 },
+    { task: "Walk the dog", completed: false, priority: 2 },
+  ];
+
+  // Task 1: Filter Incomplete Tasks
+  const incompleteTasks = todos.filter(function(todo) {
+    return !todo.completed;
+  });
+
+  // Task 2: Sort Tasks by Priority
+  const sortedByPriority = todos.slice().sort(function(a, b) {
+    return a.priority - b.priority;
+  });
+
+  // Task 3: Mark All Tasks as Completed
+  const allCompleted = todos.map(function(todo) {
+    return { ...todo, completed: true };
+  });
+
+  // Task 4: Combine Filters
+  const sortedIncompleteTasks = todos
+  .filter(function(todo) {
+    return !todo.completed;
+  })
+  .sort(function(a, b) {
+    return a.priority - b.priority;
+  });
+
+  console.log("Incomplete Tasks:", incompleteTasks);
+  console.log("Sorted by Priority:", sortedByPriority);
+  console.log("All Tasks Completed:", allCompleted);
+  console.log("Sorted Incomplete Tasks:", sortedIncompleteTasks);  
